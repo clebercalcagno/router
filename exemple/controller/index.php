@@ -55,20 +55,20 @@ $router->get("/redirect/{category}/{page}", "name:redirect", "name.redirect.para
  */
 $router->group("call", Middleware::GUEST);
 $router->get(
-    "/",
-    function ($data, Router $route) {
-        var_dump($data, $route->current());
+  "/",
+  function ($data, Router $route) {
+    var_dump($data, $route->current());
 
-        echo "<a href='{$route->home()}' title='voltar'>voltar</a>";
-    }
+    echo "<a href='{$route->home()}' title='voltar'>voltar</a>";
+  }
 );
 $router->get(
-    "/{app}/",
-    function ($data, Router $route) {
-        var_dump($data, $route->current());
+  "/{app}/",
+  function ($data, Router $route) {
+    var_dump($data, $route->current());
 
-        echo "<a href='{$route->home()}' title='voltar'>voltar</a>";
-    }
+    echo "<a href='{$route->home()}' title='voltar'>voltar</a>";
+  }
 );
 
 /**
@@ -83,6 +83,6 @@ $router->get("/{errcode}", "Coffee:notFound");
 $router->dispatch();
 
 if ($router->error()) {
-    //var_dump($router->error());
-    $router->redirect("/error/{$router->error()}");
+  //var_dump($router->error());
+  $router->redirect("/error/{$router->error()}");
 }
