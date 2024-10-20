@@ -1,6 +1,6 @@
 <?php
 
-namespace CoffeeCode\Router;
+namespace Calcagno\Router;
 
 /**
  * Class CoffeeCode Dispatch

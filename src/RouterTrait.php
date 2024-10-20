@@ -1,6 +1,6 @@
 <?php
 
-namespace CoffeeCode\Router;
+namespace Calcagno\Router;
 
 /**
  * Trait RouterTrait
@@ -115,15 +115,15 @@ trait RouterTrait
           return true;
         }
 
-        $this->error = self::METHOD_NOT_ALLOWED;
+        $this->error = Dispatch::METHOD_NOT_ALLOWED;
         return false;
       }
 
-      $this->error = self::BAD_REQUEST;
+      $this->error = Dispatch::BAD_REQUEST;
       return false;
     }
 
-    $this->error = self::NOT_FOUND;
+    $this->error = Dispatch::NOT_FOUND;
     return false;
   }
 
@@ -148,11 +148,11 @@ trait RouterTrait
             return false;
           }
         } else {
-          $this->error = self::METHOD_NOT_ALLOWED;
+          $this->error = Dispatch::METHOD_NOT_ALLOWED;
           return false;
         }
       } else {
-        $this->error = self::NOT_IMPLEMENTED;
+        $this->error = Dispatch::NOT_IMPLEMENTED;
         return false;
       }
     }
